@@ -1,13 +1,29 @@
 {
   "name": "trivio",
   "version": "1.0.0",
-  "description": "",
+  "description": "🎉 Trivio – The Ultimate CLI Quiz Game!",
   "main": "index.js",
+  "type": "module",
+  "bin": "./index.js",
   "scripts": {
+    "start": "node index.js",
+    "runbun": "bun run index.js",
+    "rundeno": "deno run index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.5.2"
+  "author": {
+    "name": "sumangal karan",
+    "email": "sumangalkaran44@gmail.com",
+    "url": "https://github.com/sumangal44"
+  },
+  "license": "MIT",
+  "packageManager": "pnpm@10.5.2",
+  "dependencies": {
+    "@clack/prompts": "^0.10.0",
+    "conwelcome": "^0.1.7",
+    "inquirer": "^12.4.2",
+    "picocolors": "^1.1.1",
+    "prettier": "^3.5.2"
+  }
 }
