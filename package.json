@@ -11,7 +11,7 @@
     "rundeno": "deno run index.js",
     "test": "vitest",
     "test:watch": "vitest --watch",
-    "release": "node ./scripts/release-safe.mjs && standard-version",
+    "release": "node --experimental-specifier-resolution=node ./scripts/run-release.mjs",
     "postrelease": "git push --follow-tags origin master && npm publish --access public"
   },
   "keywords": [],

@@ -50,6 +50,21 @@ try {
 
   log('found existing tag(s) greater than current version:', conflicting.join(', '))
 
+  // If any conflicting tag already points to HEAD, assume release already applied
+  for (const t of conflicting) {
+    try {
+      const tagCommit = execSync(`git rev-parse ${t}`, { encoding: 'utf8' }).trim()
+      const headCommit = execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim()
+      if (tagCommit === headCommit) {
+        log(`tag ${t} already points to HEAD; nothing to do. Skipping standard-version.`)
+        // exit code 3 indicates already tagged (wrapper will skip standard-version)
+        process.exit(3)
+      }
+    } catch (e) {
+      // continue
+    }
+  }
+
   const force = (process.env.FORCE_RELEASE || '').toLowerCase() === 'true'
   if (!force) {
     console.error('\nERROR: There are existing git tag(s) newer than the current package.json version.')
