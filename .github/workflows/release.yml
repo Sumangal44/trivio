@@ -18,17 +18,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-
-      - name: Enable pnpm via Corepack
-        run: |
-          corepack enable
-          corepack prepare pnpm@10.5.2 --activate
+          cache: 'npm'
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: npm ci
 
       - name: Run tests
-        run: pnpm test
+        run: npm test
 
       - name: Configure git user
         run: |
@@ -38,7 +34,7 @@ jobs:
       - name: Bump version and generate changelog
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: pnpm run release
+        run: npm run release
 
       - name: Push changes and tags
         env:
@@ -50,4 +46,4 @@ jobs:
         if: startsWith(github.ref, 'refs/heads/master')
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: pnpm publish --access public
+        run: npm publish --access public
