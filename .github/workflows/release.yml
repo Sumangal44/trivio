@@ -46,6 +46,14 @@ jobs:
         run: |
           git push --follow-tags origin master
 
+      - name: Configure npm auth
+        if: startsWith(github.ref, 'refs/heads/master')
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+          npm whoami || true
+
       - name: Publish to npm (npm)
         if: startsWith(github.ref, 'refs/heads/master')
         env:
