@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.8](https://github.com/Sumangal44/trivio/compare/v1.1.7...v1.1.8) (2025-11-28)
+
+
+### Bug Fixes
+
+* remove experimental specifier resolution flag from release script ([755835b](https://github.com/Sumangal44/trivio/commit/755835baf9e022af6367902ff53f826467308238))
+
 ### [1.1.7](https://github.com/Sumangal44/trivio/compare/v1.1.2...v1.1.7) (2025-11-28)
 
 
