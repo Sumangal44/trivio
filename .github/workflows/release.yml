@@ -25,7 +25,7 @@ jobs:
           corepack prepare pnpm@10.5.2 --activate
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
 
       - name: Run tests
         run: pnpm test
