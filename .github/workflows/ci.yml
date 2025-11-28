@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node + npm
+        uses: npm/action-setup@v2
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install --frozen-lockfile
+
+      - name: Run tests
+        run: npm test
