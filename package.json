@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "bin": {
-    "trivio": "./index.js"
+    "trivio": "index.js"
   },
   "scripts": {
     "start": "node index.js",
