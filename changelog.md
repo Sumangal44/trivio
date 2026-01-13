@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.21](https://github.com/Sumangal44/trivio/compare/v1.1.20...v1.1.21) (2026-01-13)
+
+### [1.1.20](https://github.com/Sumangal44/trivio/compare/v1.1.19...v1.1.20) (2026-01-13)
+
 ### [1.1.19](https://github.com/Sumangal44/trivio/compare/v1.1.18...v1.1.19) (2026-01-13)
 
 ### [1.1.18](https://github.com/Sumangal44/trivio/compare/v1.1.17...v1.1.18) (2026-01-13)
