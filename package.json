@@ -4,7 +4,9 @@
   "description": "🎉 Trivio – The Ultimate CLI Quiz Game!",
   "main": "index.js",
   "type": "module",
-  "bin": "./index.js",
+  "bin": {
+    "trivio": "./index.js"
+  },
   "scripts": {
     "start": "node index.js",
     "runbun": "bun run index.js",
